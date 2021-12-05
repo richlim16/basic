@@ -20,6 +20,15 @@ class CreatePostsTable extends Migration
             $table->text('caption');
             $table->timestamps();
         });
+
+        DB::table('posts')->insert([
+                'user_id' => 1,
+                'caption' => "have you heard of the mind goblins? mind goblin deeznuts. got'em."
+        ]);
+        DB::table('posts')->insert([
+            'user_id' => 2,
+            'caption' => "have you heard of sea of thieves? sea of thieves nuts fit in your mouth. got'em."
+    ]);
     }
 
     /**
