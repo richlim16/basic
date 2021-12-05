@@ -17,8 +17,15 @@ class CreateFriendsTable extends Migration
             $table->id();
             $table->foreignid('friend1');
             $table->foreignId('friend2');
+            $table->boolean('status')->default(false);
             $table->timestamps();
         });
+
+        DB::table('friends')->insert([
+                'friend1' => 1,
+                'friend2' => 2,
+                'status' => true
+        ]);
     }
 
     /**
