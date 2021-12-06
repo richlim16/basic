@@ -10025,9 +10025,14 @@ body {
 }
 
 nav {
-  display: flex;
-  justify-content: space-between;
-  padding: 0 5em;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  font-size: 2em;
+  background-color: #282b30;
+}
+
+.sidebar {
+  border-right: 0.5em solid #282b30;
 }
 
 #home-body {
