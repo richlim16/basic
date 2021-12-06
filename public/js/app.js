@@ -2073,11 +2073,7 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
  */
 
 
-<<<<<<< HEAD
 __webpack_require__(/*! ./src/App */ "./resources/js/src/App.js");
-=======
-__webpack_require__(/*! ./components/HomeComponent */ "./resources/js/components/HomeComponent.js");
->>>>>>> 690e40f1cbf32f31d2abafb3e2543e646bde0618
 
 /***/ }),
 
@@ -2125,7 +2121,6 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /***/ }),
 
-<<<<<<< HEAD
 /***/ "./resources/js/src/App.js":
 /*!*********************************!*\
   !*** ./resources/js/src/App.js ***!
@@ -2178,12 +2173,6 @@ react_dom__WEBPACK_IMPORTED_MODULE_1__.render( /*#__PURE__*/(0,react_jsx_runtime
 /*!********************************************!*\
   !*** ./resources/js/src/components/Add.js ***!
   \********************************************/
-=======
-/***/ "./resources/js/components/HomeComponent.js":
-/*!**************************************************!*\
-  !*** ./resources/js/components/HomeComponent.js ***!
-  \**************************************************/
->>>>>>> 690e40f1cbf32f31d2abafb3e2543e646bde0618
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -2192,18 +2181,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-<<<<<<< HEAD
 /* harmony import */ var _AppContainer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./AppContainer */ "./resources/js/src/components/AppContainer.js");
-=======
-/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
->>>>>>> 690e40f1cbf32f31d2abafb3e2543e646bde0618
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
 
 
 
 
-<<<<<<< HEAD
 var Add = function Add() {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_AppContainer__WEBPACK_IMPORTED_MODULE_1__["default"], {
     title: "ADD POST wowie",
@@ -2211,14 +2195,14 @@ var Add = function Add() {
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
         className: "form-group",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
-          children: "Title"
+          children: "Image"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("textarea", {
           className: "form-control"
         })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
         className: "form-group",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
-          children: "Description"
+          children: "Caption"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("textarea", {
           className: "form-control"
         })]
@@ -2342,9 +2326,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/index.js");
 /* harmony import */ var _AppContainer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./AppContainer */ "./resources/js/src/components/AppContainer.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _NavBar__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./NavBar */ "./resources/js/src/components/NavBar.js");
+/* harmony import */ var _User__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./User */ "./resources/js/src/components/User.js");
+/* harmony import */ var _Post__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Post */ "./resources/js/src/components/Post.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
 
 
 
@@ -2352,87 +2341,197 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var Home = function Home() {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(_AppContainer__WEBPACK_IMPORTED_MODULE_1__["default"], {
-    title: "Mommy Milkers",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_3__.Link, {
-      to: "/add",
-      className: "btn btn-primary",
-      children: "ADD POST"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-      className: "table-responsive",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("table", {
-        className: "table table-striped mt-4",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("thead", {
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("tr", {
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("th", {
-              children: "ID"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("th", {
-              children: "Title"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("th", {
-              children: "Description"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("th", {
-              children: "Action"
-            })]
-          })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("tbody", {
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("tr", {
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("td", {
-              children: "1"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("td", {
-              children: "Sample Title"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("td", {
-              children: "Sample Desc"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("td", {
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_3__.Link, {
-                to: "/edit/1",
-                className: "btn btn-warning",
-                children: "EDIT"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("a", {
-                href: "#",
-                className: "btn btn-danger",
-                children: "DELETE"
-              })]
-            })]
-          })
+  return (
+    /*#__PURE__*/
+    // <AppContainer title="Mommy Milkers">
+    //     <Link to="/add" className="btn btn-primary">ADD POST</Link>
+    //     <div className="table-responsive">
+    //         <table className="table table-striped mt-4">
+    //             <thead>
+    //                 <tr>
+    //                     <th>ID</th>
+    //                     <th>Image</th>
+    //                     <th>Description</th>
+    //                     <th>Action</th>
+    //                 </tr>
+    //             </thead>
+    //             <tbody>
+    //                 <tr>
+    //                     <td>1</td>
+    //                     <td>Sample Image</td>
+    //                     <td>Sample Desc</td>
+    //                     <td>
+    //                         <Link to="/edit/1" className="btn btn-warning">EDIT</Link>
+    //                         <a href="#" className="btn btn-danger">DELETE</a>
+    //                     </td>
+    //                 </tr>
+    //             </tbody>
+    //         </table>
+    //     </div>
+    // </AppContainer>
+    (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_NavBar__WEBPACK_IMPORTED_MODULE_2__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("main", {
+        id: "home-body",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("h2", {
+            children: "Friends"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_User__WEBPACK_IMPORTED_MODULE_3__["default"], {
+            profilePhoto: "https://scontent.fceb4-1.fna.fbcdn.net/v/t1.6435-9/179922935_3812072485581640_6416529595137471531_n.jpg?_nc_cat=104&ccb=1-5&_nc_sid=09cbfe&_nc_eui2=AeHVe1bHDEzB7z4FS-IQ_SclFP7Z3sOkBrQU_tnew6QGtDdlV549gJT5yO-gJy3O0Zq80qJumGb5My3uRrGfZbpO&_nc_ohc=80A-IWYIWfEAX-ykyOU&_nc_ht=scontent.fceb4-1.fna&oh=213d170f622486e0c305cfbc83d0df6d&oe=61D4B6B7",
+            username: "Richlim16"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_User__WEBPACK_IMPORTED_MODULE_3__["default"], {
+            profilePhoto: "https://avatars.githubusercontent.com/u/54580181?v=4",
+            username: "R-ayaay"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("h2", {
+            children: "People you may know"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_User__WEBPACK_IMPORTED_MODULE_3__["default"], {
+            profilePhoto: "https://scontent.fceb4-1.fna.fbcdn.net/v/t1.6435-9/108020072_2749426005161890_7560618786899569698_n.jpg?_nc_cat=103&ccb=1-5&_nc_sid=e3f864&_nc_eui2=AeFhhSaqlOhMHnHSYLu4p-TL6T3OK0mZ51PpPc4rSZnnU_IyOZTZV-dJzcLilYCe0to9daqY2ShnbHHHqmgBJ1f9&_nc_ohc=0w6Qw3GwFe8AX9HZ-dn&_nc_ht=scontent.fceb4-1.fna&oh=9a8646a3b1107e324106ec9f95afb7cf&oe=61D3F795",
+            username: "CapsLock"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_User__WEBPACK_IMPORTED_MODULE_3__["default"], {
+            profilePhoto: "https://scontent.fceb4-1.fna.fbcdn.net/v/t1.6435-9/78779126_3797999070217551_1284373411107176448_n.jpg?_nc_cat=111&ccb=1-5&_nc_sid=09cbfe&_nc_eui2=AeFRBTTJq98neJN2l3ydyQbOrf_5o1h1Haut__mjWHUdq_LiN89xiiuGe6WMvlOImdvws1h0bInQLeRgSLdbZlm7&_nc_ohc=Rys-2gtCmYcAX9M69PH&_nc_ht=scontent.fceb4-1.fna&oh=a8c2954e83dc21a20e152bb40f5c2aa7&oe=61D24DC4",
+            username: "Chongbjorn"
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+          id: "posts-container",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Post__WEBPACK_IMPORTED_MODULE_4__["default"], {
+            userID: "1",
+            caption: "felt cute, might send armpit pics later",
+            userIMG: "https://static.wikia.nocookie.net/virtualyoutuber/images/a/a5/Sakamata_Chloe_Portrait.png",
+            image: "https://cdn.donmai.us/sample/46/80/__sakamata_chloe_hololive_drawn_by_rykysd__sample-468047eaa541bafdd15b27ed890ffea3.jpg",
+            dateCreated: "Just Now"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Post__WEBPACK_IMPORTED_MODULE_4__["default"], {
+            userID: "1",
+            caption: "uwu",
+            userIMG: "https://static.wikia.nocookie.net/virtualyoutuber/images/a/a5/Sakamata_Chloe_Portrait.png",
+            image: "https://cdn.donmai.us/sample/6d/bb/sample-6dbb041b026da316174ff4f3b50387db.jpg",
+            dateCreated: "Two Hours Ago"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Post__WEBPACK_IMPORTED_MODULE_4__["default"], {
+            userID: "2",
+            dateCreated: "One Day Ago"
+          })]
         })]
-      })
+      })]
+    })
+  );
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Home);
+
+/***/ }),
+
+/***/ "./resources/js/src/components/NavBar.js":
+/*!***********************************************!*\
+  !*** ./resources/js/src/components/NavBar.js ***!
+  \***********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/index.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+
+var NavBar = function NavBar() {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("nav", {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_2__.Link, {
+      to: "#",
+      children: "BASIC"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_2__.Link, {
+      to: "#",
+      children: "NEWS FEED"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_2__.Link, {
+      to: "/profile",
+      children: "PROFILE"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+      children: "LOG OUT"
     })]
   });
 };
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Home);
-=======
-function Example() {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-    className: "container",
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-      className: "row justify-content-center",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-        className: "col-md-8",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-          className: "card",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-            className: "card-header",
-            children: "Home Component"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-            className: "card-body",
-            children: "I'm the Home component!"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-            className: "card-body",
-            children: "Please design my raymond uwu"
-          })]
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (NavBar);
+
+/***/ }),
+
+/***/ "./resources/js/src/components/Post.js":
+/*!*********************************************!*\
+  !*** ./resources/js/src/components/Post.js ***!
+  \*********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+var Post = function Post(_ref) {
+  var userID = _ref.userID,
+      userIMG = _ref.userIMG,
+      caption = _ref.caption,
+      image = _ref.image,
+      dateCreated = _ref.dateCreated;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+    className: "postCard",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("h5", {
+      className: "card-header",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
+        src: userIMG
+      }), userID, " posted ", dateCreated]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+      className: "card-body",
+      children: [caption, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
+          src: image
         })
-      })
-    })
+      })]
+    })]
   });
-}
+};
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Example);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Post);
 
-if (document.getElementById('homecomponent')) {
-  react_dom__WEBPACK_IMPORTED_MODULE_1__.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(Example, {}), document.getElementById('homecomponent'));
-}
->>>>>>> 690e40f1cbf32f31d2abafb3e2543e646bde0618
+/***/ }),
+
+/***/ "./resources/js/src/components/User.js":
+/*!*********************************************!*\
+  !*** ./resources/js/src/components/User.js ***!
+  \*********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+var User = function User(_ref) {
+  var profilePhoto = _ref.profilePhoto,
+      username = _ref.username;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+    className: "userCard",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
+      src: profilePhoto
+    }), username]
+  });
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (User);
 
 /***/ }),
 
@@ -6802,7 +6901,6 @@ if (document.getElementById('homecomponent')) {
 
 /***/ }),
 
-<<<<<<< HEAD
 /***/ "./node_modules/history/index.js":
 /*!***************************************!*\
   !*** ./node_modules/history/index.js ***!
@@ -6841,8 +6939,6 @@ typeof d?d:I(d)},push:z,replace:A,go:y,back:function(){y(-1)},forward:function()
 
 /***/ }),
 
-=======
->>>>>>> 690e40f1cbf32f31d2abafb3e2543e646bde0618
 /***/ "./node_modules/jquery/dist/jquery.js":
 /*!********************************************!*\
   !*** ./node_modules/jquery/dist/jquery.js ***!
@@ -64198,7 +64294,6 @@ if (false) {} else {
 
 /***/ }),
 
-<<<<<<< HEAD
 /***/ "./node_modules/react-router-dom/index.js":
 /*!************************************************!*\
   !*** ./node_modules/react-router-dom/index.js ***!
@@ -65575,8 +65670,6 @@ const normalizeHash = hash => !hash || hash === "#" ? "" : hash.startsWith("#") 
 
 /***/ }),
 
-=======
->>>>>>> 690e40f1cbf32f31d2abafb3e2543e646bde0618
 /***/ "./node_modules/react/cjs/react-jsx-runtime.development.js":
 /*!*****************************************************************!*\
   !*** ./node_modules/react/cjs/react-jsx-runtime.development.js ***!
@@ -70232,7 +70325,6 @@ if (false) {} else {
 
 /***/ }),
 
-<<<<<<< HEAD
 /***/ "./node_modules/@babel/runtime/helpers/esm/extends.js":
 /*!************************************************************!*\
   !*** ./node_modules/@babel/runtime/helpers/esm/extends.js ***!
@@ -70264,8 +70356,6 @@ function _extends() {
 
 /***/ }),
 
-=======
->>>>>>> 690e40f1cbf32f31d2abafb3e2543e646bde0618
 /***/ "./node_modules/axios/package.json":
 /*!*****************************************!*\
   !*** ./node_modules/axios/package.json ***!
@@ -70273,11 +70363,7 @@ function _extends() {
 /***/ ((module) => {
 
 "use strict";
-<<<<<<< HEAD
 module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"Promise based HTTP client for the browser and node.js","main":"index.js","scripts":{"test":"grunt test","start":"node ./sandbox/server.js","build":"NODE_ENV=production grunt build","preversion":"npm test","version":"npm run build && grunt version && git add -A dist && git add CHANGELOG.md bower.json package.json","postversion":"git push && git push --tags","examples":"node ./examples/server.js","coveralls":"cat coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js","fix":"eslint --fix lib/**/*.js"},"repository":{"type":"git","url":"https://github.com/axios/axios.git"},"keywords":["xhr","http","ajax","promise","node"],"author":"Matt Zabriskie","license":"MIT","bugs":{"url":"https://github.com/axios/axios/issues"},"homepage":"https://axios-http.com","devDependencies":{"coveralls":"^3.0.0","es6-promise":"^4.2.4","grunt":"^1.3.0","grunt-banner":"^0.6.0","grunt-cli":"^1.2.0","grunt-contrib-clean":"^1.1.0","grunt-contrib-watch":"^1.0.0","grunt-eslint":"^23.0.0","grunt-karma":"^4.0.0","grunt-mocha-test":"^0.13.3","grunt-ts":"^6.0.0-beta.19","grunt-webpack":"^4.0.2","istanbul-instrumenter-loader":"^1.0.0","jasmine-core":"^2.4.1","karma":"^6.3.2","karma-chrome-launcher":"^3.1.0","karma-firefox-launcher":"^2.1.0","karma-jasmine":"^1.1.1","karma-jasmine-ajax":"^0.1.13","karma-safari-launcher":"^1.0.0","karma-sauce-launcher":"^4.3.6","karma-sinon":"^1.0.5","karma-sourcemap-loader":"^0.3.8","karma-webpack":"^4.0.2","load-grunt-tasks":"^3.5.2","minimist":"^1.2.0","mocha":"^8.2.1","sinon":"^4.5.0","terser-webpack-plugin":"^4.2.3","typescript":"^4.0.5","url-search-params":"^0.10.0","webpack":"^4.44.2","webpack-dev-server":"^3.11.0"},"browser":{"./lib/adapters/http.js":"./lib/adapters/xhr.js"},"jsdelivr":"dist/axios.min.js","unpkg":"dist/axios.min.js","typings":"./index.d.ts","dependencies":{"follow-redirects":"^1.14.0"},"bundlesize":[{"path":"./dist/axios.min.js","threshold":"5kB"}]}');
-=======
-module.exports = JSON.parse('{"_from":"axios@^0.21","_id":"axios@0.21.4","_inBundle":false,"_integrity":"sha512-ut5vewkiu8jjGBdqpM44XxjuCjq9LAKeHVmoVfHVzy8eHgxxq8SbAVQNovDA8mVi05kP0Ea/n/UzcSHcTJQfNg==","_location":"/axios","_phantomChildren":{},"_requested":{"type":"range","registry":true,"raw":"axios@^0.21","name":"axios","escapedName":"axios","rawSpec":"^0.21","saveSpec":null,"fetchSpec":"^0.21"},"_requiredBy":["#DEV:/"],"_resolved":"https://registry.npmjs.org/axios/-/axios-0.21.4.tgz","_shasum":"c67b90dc0568e5c1cf2b0b858c43ba28e2eda575","_spec":"axios@^0.21","_where":"D:\\\\richl\\\\Documents\\\\School\\\\3rd Year\\\\CS 3105 - Application Development\\\\Submissions\\\\basic-project\\\\basic","author":{"name":"Matt Zabriskie"},"browser":{"./lib/adapters/http.js":"./lib/adapters/xhr.js"},"bugs":{"url":"https://github.com/axios/axios/issues"},"bundleDependencies":false,"bundlesize":[{"path":"./dist/axios.min.js","threshold":"5kB"}],"dependencies":{"follow-redirects":"^1.14.0"},"deprecated":false,"description":"Promise based HTTP client for the browser and node.js","devDependencies":{"coveralls":"^3.0.0","es6-promise":"^4.2.4","grunt":"^1.3.0","grunt-banner":"^0.6.0","grunt-cli":"^1.2.0","grunt-contrib-clean":"^1.1.0","grunt-contrib-watch":"^1.0.0","grunt-eslint":"^23.0.0","grunt-karma":"^4.0.0","grunt-mocha-test":"^0.13.3","grunt-ts":"^6.0.0-beta.19","grunt-webpack":"^4.0.2","istanbul-instrumenter-loader":"^1.0.0","jasmine-core":"^2.4.1","karma":"^6.3.2","karma-chrome-launcher":"^3.1.0","karma-firefox-launcher":"^2.1.0","karma-jasmine":"^1.1.1","karma-jasmine-ajax":"^0.1.13","karma-safari-launcher":"^1.0.0","karma-sauce-launcher":"^4.3.6","karma-sinon":"^1.0.5","karma-sourcemap-loader":"^0.3.8","karma-webpack":"^4.0.2","load-grunt-tasks":"^3.5.2","minimist":"^1.2.0","mocha":"^8.2.1","sinon":"^4.5.0","terser-webpack-plugin":"^4.2.3","typescript":"^4.0.5","url-search-params":"^0.10.0","webpack":"^4.44.2","webpack-dev-server":"^3.11.0"},"homepage":"https://axios-http.com","jsdelivr":"dist/axios.min.js","keywords":["xhr","http","ajax","promise","node"],"license":"MIT","main":"index.js","name":"axios","repository":{"type":"git","url":"git+https://github.com/axios/axios.git"},"scripts":{"build":"NODE_ENV=production grunt build","coveralls":"cat coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js","examples":"node ./examples/server.js","fix":"eslint --fix lib/**/*.js","postversion":"git push && git push --tags","preversion":"npm test","start":"node ./sandbox/server.js","test":"grunt test","version":"npm run build && grunt version && git add -A dist && git add CHANGELOG.md bower.json package.json"},"typings":"./index.d.ts","unpkg":"dist/axios.min.js","version":"0.21.4"}');
->>>>>>> 690e40f1cbf32f31d2abafb3e2543e646bde0618
 
 /***/ })
 

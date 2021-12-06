@@ -12,8 +12,4 @@ require('./bootstrap');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-<<<<<<< HEAD
 require('./src/App');
-=======
-require('./components/HomeComponent');
->>>>>>> 690e40f1cbf32f31d2abafb3e2543e646bde0618

@@ -5,12 +5,12 @@ const Add = () => {
         <AppContainer title="ADD POST wowie">
             <form>
                 <div className="form-group">
-                    <label>Title</label>
+                    <label>Image</label>
                     <textarea className="form-control">
                     </textarea>
                 </div>
                 <div className="form-group">
-                    <label>Description</label>
+                    <label>Caption</label>
                     <textarea className="form-control">
                     </textarea>
                 </div>
