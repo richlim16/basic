@@ -7,15 +7,13 @@ import {
 } from "react-router-dom";
 
 import Home from './components/Home';
-import Add from './components/Add';
-import Edit from './components/Edit';
+import Profile from './components/Profile';
 const App = () => {
     return (
         <Router className="App__container" >
             <Routes>
                 <Route exact path="/" element={<Home />} />
-                <Route path="/add" element={<Add />} />
-                <Route path="/edit/:id" element={<Edit />} />
+                <Route path="/profile" element={<Profile />} />
             </Routes>
         </Router>
     );

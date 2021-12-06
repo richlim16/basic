@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import AppContainer from './AppContainer';
 import NavBar from './NavBar';
 import User from './User';
 import Post from './Post';
