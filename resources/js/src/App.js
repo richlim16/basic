@@ -6,13 +6,15 @@ import {
     Route,
 } from "react-router-dom";
 
-import Home from './components/Home';
-import Profile from './components/Profile';
+import Newsfeed from './components/Pages/NewsFeed';
+import Profile from './components/Pages/Profile';
+import NavBar from './components/NavBar';
 const App = () => {
     return (
         <Router className="App__container" >
+            <NavBar />
             <Routes>
-                <Route exact path="/" element={<Home />} />
+                <Route exact path="/" element={<Newsfeed />} />
                 <Route path="/profile" element={<Profile />} />
             </Routes>
         </Router>
