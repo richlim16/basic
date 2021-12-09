@@ -6,7 +6,7 @@ const NavBar = () => {
             <Link to="/">BASIC</Link>
             <Link to="/">NEWS FEED</Link>
             <Link to="/profile">PROFILE</Link>
-            <div>LOG OUT</div>
+            <a href="/logout">Logout</a>
         </nav>
     );
 };

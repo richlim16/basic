@@ -5,14 +5,49 @@ import {
     Routes,
     Route,
 } from "react-router-dom";
+import {useEffect, useState} from 'react';
+import api from './api';
 
 import Newsfeed from './components/Pages/NewsFeed';
 import Profile from './components/Pages/Profile';
 import NavBar from './components/NavBar';
+
 const App = (props) => {
+    const [friends, setFriends] = useState(null);
+
+    useEffect(() => {
+        api.getAllFriends(props.user_id)
+        .then(res => {
+            setFriends(res.data);
+        })
+      }, []);
+
+      const renderFriends = () => {
+          if(!friends){
+            return (
+                <tr>
+                    <td>no friends... lmao</td>
+                </tr>
+            )
+          }
+          else{
+              return friends.map((friend) => (
+                <tr>
+                    <td>friend1 : {friend.friend1}</td>
+                    <td>friend2 : {friend.friend2}</td>
+                </tr>
+            ))
+          }
+      }
+
     return (
         <Router className="App__container" >
             <h1>testing user id: {props.user_id}</h1>
+            <table>
+                <tbody>
+                    {renderFriends()}
+                </tbody>
+            </table>
             <NavBar />
             <Routes>
                 <Route exact path="/" element={<Newsfeed />} />

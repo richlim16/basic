@@ -2,6 +2,7 @@ const axios = require('axios').default;
 const BASE_API_URL = 'localhost:8000/api';
 
 export default{
+    //posts requests
     getAllPosts: () => 
         axios.get(`/api/posts/${id}`),
     getOnePost: (id) =>
@@ -12,4 +13,8 @@ export default{
         axios.put(`api/posts/${id}`, post),
     deletePost: (id) => 
         axios.delete(`api/posts/${id}`),
+
+    //friends requests
+    getAllFriends: (id) => 
+        axios.get(`/api/friends/${id}`),
 }

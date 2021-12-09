@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Friend;
+use App\Models\User;
 
 class FriendController extends Controller
 {
@@ -45,7 +47,12 @@ class FriendController extends Controller
      */
     public function show($id)
     {
-        //
+        $friends = Friend::where('status', 1)
+        ->where('friend1', $id)
+        ->orWhere('friend2', $id)
+        ->get();
+
+        return $friends;
     }
 
     /**
