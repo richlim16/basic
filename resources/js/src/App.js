@@ -18,6 +18,7 @@ const App = (props) => {
     useEffect(() => {
         api.getAllFriends(props.user_id)
         .then(res => {
+            console.log("data: " +res);
             setFriends(res.data);
         })
       }, []);
@@ -26,15 +27,24 @@ const App = (props) => {
           if(!friends){
             return (
                 <tr>
-                    <td>no friends... lmao</td>
+                    <td>loading friends list...</td>
                 </tr>
             )
           }
+
+          else if(friends.length === 0){
+              return(
+                  <tr>
+                      <td>No Friends... lmao</td>
+                  </tr>
+              )
+          }
+
           else{
               return friends.map((friend) => (
                 <tr>
-                    <td>friend1 : {friend.friend1}</td>
-                    <td>friend2 : {friend.friend2}</td>
+                    <td>id : {friend.id}</td>
+                    <td>name : {friend.username}</td>
                 </tr>
             ))
           }

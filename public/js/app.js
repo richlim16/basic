@@ -2179,6 +2179,7 @@ var App = function App(props) {
 
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     _api__WEBPACK_IMPORTED_MODULE_2__["default"].getAllFriends(props.user_id).then(function (res) {
+      console.log("data: " + res);
       setFriends(res.data);
     });
   }, []);
@@ -2187,16 +2188,22 @@ var App = function App(props) {
     if (!friends) {
       return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("tr", {
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("td", {
-          children: "no friends... lmao"
+          children: "loading friends list..."
+        })
+      });
+    } else if (friends.length === 0) {
+      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("tr", {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("td", {
+          children: "No Friends... lmao"
         })
       });
     } else {
       return friends.map(function (friend) {
         return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("tr", {
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("td", {
-            children: ["friend1 : ", friend.friend1]
+            children: ["id : ", friend.id]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("td", {
-            children: ["friend2 : ", friend.friend2]
+            children: ["name : ", friend.username]
           })]
         });
       });
