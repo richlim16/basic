@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Friend;
+use App\Models\User;
+use App\Models\Post;
 
 class PostController extends Controller
 {
@@ -45,7 +48,32 @@ class PostController extends Controller
      */
     public function show($id)
     {
-        //
+        $friends = array();
+        $posts = array();
+
+        $list = Friend::where('status', true)
+        ->where('friend1', $id)
+        ->orWhere('friend2', $id)
+        ->get();
+
+        foreach ($list as $friend){
+            if($friend['friend1'] == $id){
+                $user = User::where('id', $friend['friend2'])->first();
+                $friends[] = $user;
+            }
+            else{
+                $user = User::where('id', $friend['friend1']);
+                $friends[] = $user;
+            }
+        }
+
+        foreach ($friends as $f){
+            $posts[] = Post::where('user_id', $f['id'])->get();
+        }
+
+        $sortedPosts = collect($posts)->sortBy('created_at')->all();
+
+        return $sortedPosts;
     }
 
     /**

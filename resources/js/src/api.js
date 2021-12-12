@@ -3,7 +3,7 @@ const BASE_API_URL = 'localhost:8000/api';
 
 export default{
     //posts requests
-    getAllPosts: () => 
+    getAllPosts: (id) => 
         axios.get(`/api/posts/${id}`),
     getOnePost: (id) =>
         axios.get(`/api/posts/${id}/edit`),

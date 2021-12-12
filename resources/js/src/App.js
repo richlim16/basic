@@ -18,7 +18,6 @@ const App = (props) => {
     useEffect(() => {
         api.getAllFriends(props.user_id)
         .then(res => {
-            console.log("data: " +res);
             setFriends(res.data);
         })
       }, []);
@@ -60,7 +59,7 @@ const App = (props) => {
             </table>
             <NavBar />
             <Routes>
-                <Route exact path="/" element={<Newsfeed />} />
+                <Route exact path="/" element={<Newsfeed id={props.user_id}/>} />
                 <Route path="/profile" element={<Profile />} />
             </Routes>
         </Router>
