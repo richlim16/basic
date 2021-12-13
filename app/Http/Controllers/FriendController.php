@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Arr;
 use Illuminate\Http\Request;
+use App\Models\Friend;
+use App\Models\User;
 
 class FriendController extends Controller
 {
@@ -45,7 +48,25 @@ class FriendController extends Controller
      */
     public function show($id)
     {
-        //
+        $list = Friend::where('status', 1)
+        ->where('friend1', $id)
+        ->orWhere('friend2', $id)
+        ->get();
+
+        $friends = array();
+
+        foreach ($list as $friend){
+            if($friend['friend1'] == $id){
+                $user = User::where('id', $friend['friend2'])->first();
+                $friends[] = $user;
+            }
+            else{
+                $user = User::where('id', $friend['friend1']);
+                $friends[] = $user;
+            }
+        }
+        
+        return $friends;
     }
 
     /**

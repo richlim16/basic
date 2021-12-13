@@ -13,7 +13,7 @@
 </head>
 
 <body class="antialiased">
-    <div id="app"></div>
+    <div id="app" data-user_id="{{$user_id}}"></div>
     <script src="{{asset('js/app.js')}}"></script>
 </body>
 
