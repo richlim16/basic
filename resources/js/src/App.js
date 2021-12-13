@@ -5,7 +5,7 @@ import {
     Routes,
     Route,
 } from "react-router-dom";
-import {useEffect, useState} from 'react';
+import { useEffect, useState } from 'react';
 import api from './api';
 
 import Newsfeed from './components/Pages/NewsFeed';
@@ -17,37 +17,37 @@ const App = (props) => {
 
     useEffect(() => {
         api.getAllFriends(props.user_id)
-        .then(res => {
-            setFriends(res.data);
-        })
-      }, []);
+            .then(res => {
+                setFriends(res.data);
+            })
+    }, []);
 
-      const renderFriends = () => {
-          if(!friends){
+    const renderFriends = () => {
+        if (!friends) {
             return (
                 <tr>
                     <td>loading friends list...</td>
                 </tr>
             )
-          }
+        }
 
-          else if(friends.length === 0){
-              return(
-                  <tr>
-                      <td>No Friends... lmao</td>
-                  </tr>
-              )
-          }
+        else if (friends.length === 0) {
+            return (
+                <tr>
+                    <td>No Friends... lmao</td>
+                </tr>
+            )
+        }
 
-          else{
-              return friends.map((friend) => (
+        else {
+            return friends.map((friend) => (
                 <tr>
                     <td>id : {friend.id}</td>
                     <td>name : {friend.username}</td>
                 </tr>
             ))
-          }
-      }
+        }
+    }
 
     return (
         <Router className="App__container" >
@@ -59,14 +59,14 @@ const App = (props) => {
             </table>
             <NavBar />
             <Routes>
-                <Route exact path="/" element={<Newsfeed id={props.user_id}/>} />
+                <Route exact path="/" element={<Newsfeed id={props.user_id} />} />
                 <Route path="/profile" element={<Profile />} />
             </Routes>
         </Router>
     );
 };
 
-// ReactDOM.render(<App />, document.getElementById('app'));
+ReactDOM.render(<App />, document.getElementById('app'));
 
 export default App;
 
@@ -74,5 +74,5 @@ if (document.getElementById('app')) {
     const element = document.getElementById('app');
 
     const props = Object.assign({}, element.dataset);
-    ReactDOM.render(<App {...props}/>, element);
+    ReactDOM.render(<App {...props} />, element);
 }

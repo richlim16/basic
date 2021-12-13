@@ -2230,9 +2230,9 @@ var App = function App(props) {
       })]
     })]
   });
-}; // ReactDOM.render(<App />, document.getElementById('app'));
+};
 
-
+react_dom__WEBPACK_IMPORTED_MODULE_1__.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(App, {}), document.getElementById('app'));
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (App);
 
 if (document.getElementById('app')) {
@@ -2504,9 +2504,99 @@ var NewsFeed = function NewsFeed(_ref) {
 /*!******************************************************!*\
   !*** ./resources/js/src/components/Pages/Profile.js ***!
   \******************************************************/
-/***/ (() => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: C:\\Users\\Raymond\\Desktop\\appdev final\\basic\\resources\\js\\src\\components\\Pages\\Profile.js: Unexpected token (9:1)\n\n\u001b[0m \u001b[90m  7 |\u001b[39m         \u001b[33m<\u001b[39m\u001b[33mdiv\u001b[39m\u001b[33m>\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m  8 |\u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m  9 |\u001b[39m \u001b[33m<<\u001b[39m\u001b[33m<<\u001b[39m\u001b[33m<<\u001b[39m\u001b[33m<\u001b[39m \u001b[33mHEAD\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m    |\u001b[39m  \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 10 |\u001b[39m             \u001b[33m<\u001b[39m\u001b[33mmain\u001b[39m id\u001b[33m=\u001b[39m\u001b[32m\"home-body\"\u001b[39m\u001b[33m>\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 11 |\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 12 |\u001b[39m                 \u001b[33m<\u001b[39m\u001b[33mProfileSidebar\u001b[39m \u001b[33m/\u001b[39m\u001b[33m>\u001b[39m\u001b[0m\n    at Object._raise (C:\\Users\\Raymond\\Desktop\\appdev final\\basic\\node_modules\\@babel\\parser\\lib\\index.js:541:17)\n    at Object.raiseWithData (C:\\Users\\Raymond\\Desktop\\appdev final\\basic\\node_modules\\@babel\\parser\\lib\\index.js:534:17)\n    at Object.raise (C:\\Users\\Raymond\\Desktop\\appdev final\\basic\\node_modules\\@babel\\parser\\lib\\index.js:495:17)\n    at Object.unexpected (C:\\Users\\Raymond\\Desktop\\appdev final\\basic\\node_modules\\@babel\\parser\\lib\\index.js:3580:16)\n    at Object.jsxParseIdentifier (C:\\Users\\Raymond\\Desktop\\appdev final\\basic\\node_modules\\@babel\\parser\\lib\\index.js:7250:12)\n    at Object.jsxParseNamespacedName (C:\\Users\\Raymond\\Desktop\\appdev final\\basic\\node_modules\\@babel\\parser\\lib\\index.js:7260:23)\n    at Object.jsxParseElementName (C:\\Users\\Raymond\\Desktop\\appdev final\\basic\\node_modules\\@babel\\parser\\lib\\index.js:7271:21)\n    at Object.jsxParseOpeningElementAt (C:\\Users\\Raymond\\Desktop\\appdev final\\basic\\node_modules\\@babel\\parser\\lib\\index.js:7358:22)\n    at Object.jsxParseElementAt (C:\\Users\\Raymond\\Desktop\\appdev final\\basic\\node_modules\\@babel\\parser\\lib\\index.js:7391:33)\n    at Object.jsxParseElementAt (C:\\Users\\Raymond\\Desktop\\appdev final\\basic\\node_modules\\@babel\\parser\\lib\\index.js:7407:32)");
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _Sidebar_ProfileSidebar__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Sidebar/ProfileSidebar */ "./resources/js/src/components/Sidebar/ProfileSidebar.js");
+/* harmony import */ var _Profile_ProfileBar__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Profile/ProfileBar */ "./resources/js/src/components/Profile/ProfileBar.js");
+/* harmony import */ var _Feed_Feed__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../Feed/Feed */ "./resources/js/src/components/Feed/Feed.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+
+
+
+var Profile = function Profile() {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("main", {
+      id: "home-body",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_Sidebar_ProfileSidebar__WEBPACK_IMPORTED_MODULE_1__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_Feed_Feed__WEBPACK_IMPORTED_MODULE_3__["default"], {})]
+    })
+  });
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Profile);
+
+/***/ }),
+
+/***/ "./resources/js/src/components/Profile/ProfileBar.js":
+/*!***********************************************************!*\
+  !*** ./resources/js/src/components/Profile/ProfileBar.js ***!
+  \***********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _User1__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./User1 */ "./resources/js/src/components/Profile/User1.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+var ProfileBar = function ProfileBar() {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+    className: "profilebar",
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_User1__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      profilePhoto: "https://i.kym-cdn.com/entries/icons/original/000/038/790/cover1.jpg",
+      username: "The Intruder"
+    })
+  });
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ProfileBar);
+
+/***/ }),
+
+/***/ "./resources/js/src/components/Profile/User1.js":
+/*!******************************************************!*\
+  !*** ./resources/js/src/components/Profile/User1.js ***!
+  \******************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+var User1 = function User1(_ref) {
+  var profilePhoto = _ref.profilePhoto,
+      username = _ref.username;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+    className: "userCardBar",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
+      src: profilePhoto
+    }), username]
+  });
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (User1);
 
 /***/ }),
 
@@ -2553,6 +2643,44 @@ var NewsFeedSidebar = function NewsFeedSidebar() {
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (NewsFeedSidebar);
+
+/***/ }),
+
+/***/ "./resources/js/src/components/Sidebar/ProfileSidebar.js":
+/*!***************************************************************!*\
+  !*** ./resources/js/src/components/Sidebar/ProfileSidebar.js ***!
+  \***************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _User__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./User */ "./resources/js/src/components/Sidebar/User.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+
+var ProfileSidebar = function ProfileSidebar() {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+    className: "sidebar",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h2", {
+      children: "Friends"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_User__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      profilePhoto: "https://scontent.fceb4-1.fna.fbcdn.net/v/t1.6435-9/179922935_3812072485581640_6416529595137471531_n.jpg?_nc_cat=104&ccb=1-5&_nc_sid=09cbfe&_nc_eui2=AeHVe1bHDEzB7z4FS-IQ_SclFP7Z3sOkBrQU_tnew6QGtDdlV549gJT5yO-gJy3O0Zq80qJumGb5My3uRrGfZbpO&_nc_ohc=80A-IWYIWfEAX-ykyOU&_nc_ht=scontent.fceb4-1.fna&oh=213d170f622486e0c305cfbc83d0df6d&oe=61D4B6B7",
+      username: "Richlim16"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_User__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      profilePhoto: "https://avatars.githubusercontent.com/u/54580181?v=4",
+      username: "R-ayaay"
+    })]
+  });
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ProfileSidebar);
 
 /***/ }),
 
