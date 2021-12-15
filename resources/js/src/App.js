@@ -14,6 +14,7 @@ import NavBar from './components/NavBar';
 
 const App = (props) => {
     const [friends, setFriends] = useState(null);
+    const [id, setId] = useState(props.user_id);
 
     useEffect(() => {
         api.getAllFriends(props.user_id)
@@ -21,7 +22,7 @@ const App = (props) => {
                 setFriends(res.data);
             })
     }, []);
-
+    
     const renderFriends = () => {
         if (!friends) {
             return (
@@ -60,7 +61,7 @@ const App = (props) => {
             <NavBar />
             <Routes>
                 <Route exact path="/" element={<Newsfeed id={props.user_id} />} />
-                <Route path="/profile" element={<Profile />} />
+                <Route path="/profile" element={<Profile id={id}/>} />
             </Routes>
         </Router>
     );

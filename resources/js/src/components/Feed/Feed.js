@@ -3,16 +3,26 @@ import Post from './Post';
 import api from '../../api';
 import { useEffect, useState } from 'react';
 
-const Feed = ({ id }) => {
+const Feed = ({ id , profile}) => {
     const [posts, setPosts] = useState(null);
 
     useEffect(() => {
-        api.getAllPosts(id)
+        if(!profile){
+            console.log("no given profile");
+            api.getAllPosts(id)
             .then(res => {
-                setPosts(res.data[0]);
-                console.log(res.data[0]);
+                setPosts(res.data['posts'][0]);
             })
+        }
+        else{
+            api.getProfilePosts(profile)
+            .then(res => {
+                console.log(res.data);
+                setPosts(res.data);
+            })
+        }
     }, []);
+
 
 
     const renderPosts = () => {

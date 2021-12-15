@@ -1,14 +1,16 @@
 import React from 'react';
+import { useEffect, useState } from 'react';
 import ProfileSidebar from '../Sidebar/ProfileSidebar';
 import ProfileBar from '../Profile/ProfileBar';
 import Feed from '../Feed/Feed';
-const Profile = () => {
+import api from '../../api';
+const Profile = ({id}) => {
     return (
         <div>
-				<ProfileBar />
+			<ProfileBar id={id}/>
             <main id="home-body">
-                <ProfileSidebar />
-                <Feed />
+                <ProfileSidebar/>
+                <Feed profile={id}/>
             </main>
         </div>
     );
