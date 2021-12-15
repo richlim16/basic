@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom';
 const NavBar = () => {
     return (
         <nav>
-            <Link to="/">BASIC</Link>
+            <span>BASIC</span>
             <Link to="/">NEWS FEED</Link>
             <Link to="/profile">PROFILE</Link>
-            <a href="/logout">Logout</a>
+            <a href="/logout">LOGOUT</a>
         </nav>
     );
 };

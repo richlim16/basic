@@ -1,0 +1,39 @@
+#posts-container{
+    display: flex;
+    flex-flow: column;
+    overflow-y: auto;
+    .postCard{
+        margin: 25px auto;
+        width: 600px;
+
+        .card-header{
+            background-color: $one;
+
+            img{
+                height: 50px;
+                width: 50px;
+                object-fit: cover;
+                border-radius: 100%;
+            }
+        }
+        .card-body{
+            background-color: $five;
+
+            div{
+                font-size: 20px;
+            }
+
+            img{
+                margin-top: 1.25rem;
+                width: 100%;
+                max-height: 400px;
+                object-fit: cover;
+            }
+        }
+
+        .card-footer{
+            background-color: $four;
+        }
+        
+    }
+}

@@ -2230,16 +2230,16 @@ var App = function App(props) {
       })]
     })]
   });
-};
+}; // ReactDOM.render(<App />, document.getElementById('app'));
 
-react_dom__WEBPACK_IMPORTED_MODULE_1__.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(App, {}), document.getElementById('app'));
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (App);
 
 if (document.getElementById('app')) {
   var element = document.getElementById('app');
   var props = Object.assign({}, element.dataset);
   react_dom__WEBPACK_IMPORTED_MODULE_1__.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(App, _objectSpread({}, props)), element);
 }
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (App);
 
 /***/ }),
 
@@ -2367,9 +2367,6 @@ var Feed = function Feed(_ref) {
       userIMG: "https://static.wikia.nocookie.net/virtualyoutuber/images/a/a5/Sakamata_Chloe_Portrait.png",
       image: "https://cdn.donmai.us/sample/6d/bb/sample-6dbb041b026da316174ff4f3b50387db.jpg",
       dateCreated: "Two Hours Ago"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_Post__WEBPACK_IMPORTED_MODULE_1__["default"], {
-      userID: "2",
-      dateCreated: "One Day Ago"
     })]
   });
 };
@@ -2401,6 +2398,7 @@ var Post = function Post(_ref) {
       caption = _ref.caption,
       image = _ref.image,
       dateCreated = _ref.dateCreated;
+  var hasImage = image;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
     className: "postCard",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("h5", {
@@ -2410,11 +2408,16 @@ var Post = function Post(_ref) {
       }), userID, " posted ", dateCreated]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
       className: "card-body",
-      children: [caption, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+        children: caption
+      }), hasImage ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
           src: image
         })
-      })]
+      }) : null]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+      className: "card-footer",
+      children: "Place your comment here!"
     })]
   });
 };
@@ -2444,8 +2447,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var NavBar = function NavBar() {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("nav", {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_2__.Link, {
-      to: "/",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
       children: "BASIC"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_2__.Link, {
       to: "/",
@@ -2455,7 +2457,7 @@ var NavBar = function NavBar() {
       children: "PROFILE"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
       href: "/logout",
-      children: "Logout"
+      children: "LOGOUT"
     })]
   });
 };
@@ -2622,22 +2624,30 @@ __webpack_require__.r(__webpack_exports__);
 var NewsFeedSidebar = function NewsFeedSidebar() {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
     className: "sidebar",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h2", {
-      children: "Friends"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_User__WEBPACK_IMPORTED_MODULE_1__["default"], {
-      profilePhoto: "https://scontent.fceb4-1.fna.fbcdn.net/v/t1.6435-9/179922935_3812072485581640_6416529595137471531_n.jpg?_nc_cat=104&ccb=1-5&_nc_sid=09cbfe&_nc_eui2=AeHVe1bHDEzB7z4FS-IQ_SclFP7Z3sOkBrQU_tnew6QGtDdlV549gJT5yO-gJy3O0Zq80qJumGb5My3uRrGfZbpO&_nc_ohc=80A-IWYIWfEAX-ykyOU&_nc_ht=scontent.fceb4-1.fna&oh=213d170f622486e0c305cfbc83d0df6d&oe=61D4B6B7",
-      username: "Richlim16"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_User__WEBPACK_IMPORTED_MODULE_1__["default"], {
-      profilePhoto: "https://avatars.githubusercontent.com/u/54580181?v=4",
-      username: "R-ayaay"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h2", {
-      children: "People you may know"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_User__WEBPACK_IMPORTED_MODULE_1__["default"], {
-      profilePhoto: "https://scontent.fceb4-1.fna.fbcdn.net/v/t1.6435-9/108020072_2749426005161890_7560618786899569698_n.jpg?_nc_cat=103&ccb=1-5&_nc_sid=e3f864&_nc_eui2=AeFhhSaqlOhMHnHSYLu4p-TL6T3OK0mZ51PpPc4rSZnnU_IyOZTZV-dJzcLilYCe0to9daqY2ShnbHHHqmgBJ1f9&_nc_ohc=0w6Qw3GwFe8AX9HZ-dn&_nc_ht=scontent.fceb4-1.fna&oh=9a8646a3b1107e324106ec9f95afb7cf&oe=61D3F795",
-      username: "CapsLock"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_User__WEBPACK_IMPORTED_MODULE_1__["default"], {
-      profilePhoto: "https://scontent.fceb4-1.fna.fbcdn.net/v/t1.6435-9/78779126_3797999070217551_1284373411107176448_n.jpg?_nc_cat=111&ccb=1-5&_nc_sid=09cbfe&_nc_eui2=AeFRBTTJq98neJN2l3ydyQbOrf_5o1h1Haut__mjWHUdq_LiN89xiiuGe6WMvlOImdvws1h0bInQLeRgSLdbZlm7&_nc_ohc=Rys-2gtCmYcAX9M69PH&_nc_ht=scontent.fceb4-1.fna&oh=a8c2954e83dc21a20e152bb40f5c2aa7&oe=61D24DC4",
-      username: "Chongbjorn"
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+      className: "list",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h2", {
+        className: "label",
+        children: "Friends"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_User__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        profilePhoto: "https://scontent.fceb4-1.fna.fbcdn.net/v/t1.6435-9/179922935_3812072485581640_6416529595137471531_n.jpg?_nc_cat=104&ccb=1-5&_nc_sid=09cbfe&_nc_eui2=AeHVe1bHDEzB7z4FS-IQ_SclFP7Z3sOkBrQU_tnew6QGtDdlV549gJT5yO-gJy3O0Zq80qJumGb5My3uRrGfZbpO&_nc_ohc=80A-IWYIWfEAX-ykyOU&_nc_ht=scontent.fceb4-1.fna&oh=213d170f622486e0c305cfbc83d0df6d&oe=61D4B6B7",
+        username: "Richlim16"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_User__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        profilePhoto: "https://avatars.githubusercontent.com/u/54580181?v=4",
+        username: "R-ayaay"
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+      className: "list",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h2", {
+        className: "label",
+        children: "People you may know"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_User__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        profilePhoto: "https://scontent.fceb4-1.fna.fbcdn.net/v/t1.6435-9/108020072_2749426005161890_7560618786899569698_n.jpg?_nc_cat=103&ccb=1-5&_nc_sid=e3f864&_nc_eui2=AeFhhSaqlOhMHnHSYLu4p-TL6T3OK0mZ51PpPc4rSZnnU_IyOZTZV-dJzcLilYCe0to9daqY2ShnbHHHqmgBJ1f9&_nc_ohc=0w6Qw3GwFe8AX9HZ-dn&_nc_ht=scontent.fceb4-1.fna&oh=9a8646a3b1107e324106ec9f95afb7cf&oe=61D3F795",
+        username: "CapsLock"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_User__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        profilePhoto: "https://scontent.fceb4-1.fna.fbcdn.net/v/t1.6435-9/78779126_3797999070217551_1284373411107176448_n.jpg?_nc_cat=111&ccb=1-5&_nc_sid=09cbfe&_nc_eui2=AeFRBTTJq98neJN2l3ydyQbOrf_5o1h1Haut__mjWHUdq_LiN89xiiuGe6WMvlOImdvws1h0bInQLeRgSLdbZlm7&_nc_ohc=Rys-2gtCmYcAX9M69PH&_nc_ht=scontent.fceb4-1.fna&oh=a8c2954e83dc21a20e152bb40f5c2aa7&oe=61D24DC4",
+        username: "Chongbjorn"
+      })]
     })]
   });
 };
@@ -2666,17 +2676,21 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var ProfileSidebar = function ProfileSidebar() {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
     className: "sidebar",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h2", {
-      children: "Friends"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_User__WEBPACK_IMPORTED_MODULE_1__["default"], {
-      profilePhoto: "https://scontent.fceb4-1.fna.fbcdn.net/v/t1.6435-9/179922935_3812072485581640_6416529595137471531_n.jpg?_nc_cat=104&ccb=1-5&_nc_sid=09cbfe&_nc_eui2=AeHVe1bHDEzB7z4FS-IQ_SclFP7Z3sOkBrQU_tnew6QGtDdlV549gJT5yO-gJy3O0Zq80qJumGb5My3uRrGfZbpO&_nc_ohc=80A-IWYIWfEAX-ykyOU&_nc_ht=scontent.fceb4-1.fna&oh=213d170f622486e0c305cfbc83d0df6d&oe=61D4B6B7",
-      username: "Richlim16"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_User__WEBPACK_IMPORTED_MODULE_1__["default"], {
-      profilePhoto: "https://avatars.githubusercontent.com/u/54580181?v=4",
-      username: "R-ayaay"
-    })]
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+      className: "list",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h2", {
+        className: "label",
+        children: "Friends"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_User__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        profilePhoto: "https://scontent.fceb4-1.fna.fbcdn.net/v/t1.6435-9/179922935_3812072485581640_6416529595137471531_n.jpg?_nc_cat=104&ccb=1-5&_nc_sid=09cbfe&_nc_eui2=AeHVe1bHDEzB7z4FS-IQ_SclFP7Z3sOkBrQU_tnew6QGtDdlV549gJT5yO-gJy3O0Zq80qJumGb5My3uRrGfZbpO&_nc_ohc=80A-IWYIWfEAX-ykyOU&_nc_ht=scontent.fceb4-1.fna&oh=213d170f622486e0c305cfbc83d0df6d&oe=61D4B6B7",
+        username: "Richlim16"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_User__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        profilePhoto: "https://avatars.githubusercontent.com/u/54580181?v=4",
+        username: "R-ayaay"
+      })]
+    })
   });
 };
 
@@ -2708,7 +2722,10 @@ var User = function User(_ref) {
     className: "userCard",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
       src: profilePhoto
-    }), username]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+      className: "username",
+      children: username
+    })]
   });
 };
 

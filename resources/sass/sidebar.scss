@@ -1,3 +1,29 @@
 .sidebar{
-    border-right: .5em solid $four;
+    background-color: $five;
+
+    .list{
+
+        .label{
+            margin: 10px;
+        }
+
+        .userCard{
+            margin: 10px;
+            // padding: 5px;
+            border-radius: 10px;
+            background-color: $four;
+            
+            img{
+                margin: 10px;
+                height: 50px;
+                width: 50px;
+                border-radius: 100%;
+                object-fit: cover;
+            }
+
+            .username{
+                font-size: 16px;
+            }
+        }
+    }
 }

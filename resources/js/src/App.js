@@ -66,9 +66,8 @@ const App = (props) => {
     );
 };
 
-ReactDOM.render(<App />, document.getElementById('app'));
+// ReactDOM.render(<App />, document.getElementById('app'));
 
-export default App;
 
 if (document.getElementById('app')) {
     const element = document.getElementById('app');
@@ -76,3 +75,4 @@ if (document.getElementById('app')) {
     const props = Object.assign({}, element.dataset);
     ReactDOM.render(<App {...props} />, element);
 }
+export default App;

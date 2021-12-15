@@ -3,7 +3,9 @@ const User = ({ profilePhoto, username }) => {
     return (
         <div className="userCard">
             <img src={profilePhoto} />
-            {username}
+            <span className='username'>
+                {username}
+            </span>
         </div>
     );
 };
