@@ -1,9 +1,14 @@
 import React from 'react';
-const User1 = ({ profilePhoto, username }) => {
+const User1 = ({ profilePhoto, username, profilestatus }) => {
     return (
         <div className="userCardBar">
             <img src={profilePhoto} />
-            {username}
+            <span className='username'>
+                {username}
+            </span>
+			<span className='profilestatus'>
+                {profilestatus}
+            </span>
         </div>
     );
 };

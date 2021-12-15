@@ -5,6 +5,7 @@ import Feed from '../Feed/Feed';
 const Profile = () => {
     return (
         <div>
+				<ProfileBar />
             <main id="home-body">
                 <ProfileSidebar />
                 <Feed />

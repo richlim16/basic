@@ -10021,7 +10021,7 @@ h3 {
 }
 body {
   background-color: #36393e;
-  color: white;
+  color: #cecaca;
 }
 
 nav {
@@ -10092,4 +10092,24 @@ nav {
 }
 #home-body #posts-container .postCard .card-footer {
   background-color: #282b30;
+}
+
+.profilebar {
+  background-color: #7289da;
+  padding-left: 40px;
+}
+.profilebar img {
+  margin: 25px;
+  height: 200px;
+  width: 200px;
+  border-radius: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.profilebar .username {
+  font-size: 25px;
+}
+.profilebar .profilestatus {
+  margin-left: 75px;
+  font-size: 20px;
 }
