@@ -71,9 +71,21 @@ class PostController extends Controller
             $posts[] = Post::where('user_id', $f['id'])->get();
         }
 
-        $sortedPosts = collect($posts)->sortBy('created_at')->all();
+        $sortedPosts['posts'] = collect($posts)->sortBy('created_at')->all();
 
         return $sortedPosts;
+    }
+
+    public function find($id)
+    {
+        $user = User::where('id', $id)->get();
+        if($user){
+            $posts = Post::where('user_id', $id)
+            ->orderBy('created_at', 'desc')
+            ->get();
+        }
+
+        return $posts;
     }
 
     /**

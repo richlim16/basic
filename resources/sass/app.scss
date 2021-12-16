@@ -16,8 +16,9 @@ $four : #282b30;
 $five : #1e2124;
 
 body {
- background-color: $three;
- color: white;
+    height: 100vh;
+    background-color: $three;
+    color: rgb(206, 202, 202);
 }
 
 nav{
@@ -38,4 +39,6 @@ nav{
     @import 'sidebar';
     @import 'feed';
 }
+
+@import 'profilebar';
 

@@ -23,4 +23,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::resource('posts', PostController::class);
 Route::resource('friends', FriendController::class);
+Route::get('/profile/{id}', [FriendController::class, 'find']);
+Route::get('/profile/posts/{id}', [PostController::class, 'find']);
 Route::resource('posts', PostController::class);

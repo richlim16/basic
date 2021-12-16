@@ -6,6 +6,7 @@ use Illuminate\Support\Arr;
 use Illuminate\Http\Request;
 use App\Models\Friend;
 use App\Models\User;
+use App\Models\Post;
 
 class FriendController extends Controller
 {
@@ -67,6 +68,13 @@ class FriendController extends Controller
         }
         
         return $friends;
+    }
+
+    public function find($id)
+    {
+        $user= User::where('id', $id)->get();
+
+        return $user;
     }
 
     /**

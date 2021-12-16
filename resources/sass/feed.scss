@@ -1,6 +1,7 @@
 #posts-container{
     display: flex;
     flex-flow: column;
+    height: 100vh;
     overflow-y: auto;
     .postCard{
         margin: 25px auto;

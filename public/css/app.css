@@ -10020,8 +10020,9 @@ h3 {
   }
 }
 body {
+  height: 100vh;
   background-color: #36393e;
-  color: white;
+  color: #cecaca;
 }
 
 nav {
@@ -10038,6 +10039,8 @@ nav {
 }
 #home-body .sidebar {
   background-color: #1e2124;
+  height: 100vh;
+  overflow-y: auto;
 }
 #home-body .sidebar .list .label {
   margin: 10px;
@@ -10061,6 +10064,7 @@ nav {
 #home-body #posts-container {
   display: flex;
   flex-flow: column;
+  height: 100vh;
   overflow-y: auto;
 }
 #home-body #posts-container .postCard {
@@ -10092,4 +10096,24 @@ nav {
 }
 #home-body #posts-container .postCard .card-footer {
   background-color: #282b30;
+}
+
+.profilebar {
+  background-color: #7289da;
+  padding-left: 40px;
+}
+.profilebar img {
+  margin: 10px;
+  height: 200px;
+  width: 200px;
+  border-radius: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.profilebar .username {
+  font-size: 25px;
+}
+.profilebar .profilestatus {
+  margin-left: 75px;
+  font-size: 20px;
 }

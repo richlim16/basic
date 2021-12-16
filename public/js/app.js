@@ -2177,11 +2177,43 @@ var App = function App(props) {
       friends = _useState2[0],
       setFriends = _useState2[1];
 
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(props.user_id),
+      _useState4 = _slicedToArray(_useState3, 2),
+      id = _useState4[0],
+      setId = _useState4[1];
+
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     _api__WEBPACK_IMPORTED_MODULE_2__["default"].getAllFriends(props.user_id).then(function (res) {
       setFriends(res.data);
     });
   }, []);
+
+  var renderFriends = function renderFriends() {
+    if (!friends) {
+      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("tr", {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("td", {
+          children: "loading friends list..."
+        })
+      });
+    } else if (friends.length === 0) {
+      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("tr", {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("td", {
+          children: "No Friends... lmao"
+        })
+      });
+    } else {
+      return friends.map(function (friend) {
+        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("tr", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("td", {
+            children: ["id : ", friend.id]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("td", {
+            children: ["name : ", friend.username]
+          })]
+        });
+      });
+    }
+  };
+
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.BrowserRouter, {
     className: "App__container",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("h1", {
@@ -2197,6 +2229,7 @@ var App = function App(props) {
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_8__.Route, {
         path: "/profile",
         element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_components_Pages_Profile__WEBPACK_IMPORTED_MODULE_4__["default"], {
+          id: id,
           friendsList: friends
         })
       })]
@@ -2249,10 +2282,14 @@ var BASE_API_URL = 'localhost:8000/api';
   //friends requests
   getAllFriends: function getAllFriends(id) {
     return axios.get("/api/friends/".concat(id));
-  } //get user data of the post
-  // getUser: (id) =>
-  //     axios.get(`/api/users/${id}`),
-
+  },
+  //getting profile
+  getProfile: function getProfile(id) {
+    return axios.get("/api/profile/".concat(id));
+  },
+  getProfilePosts: function getProfilePosts(id) {
+    return axios.get("api/profile/posts/".concat(id));
+  }
 });
 
 /***/ }),
@@ -2292,7 +2329,8 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 var Feed = function Feed(_ref) {
-  var id = _ref.id;
+  var id = _ref.id,
+      profile = _ref.profile;
 
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null),
       _useState2 = _slicedToArray(_useState, 2),
@@ -2300,9 +2338,17 @@ var Feed = function Feed(_ref) {
       setPosts = _useState2[1];
 
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    _api__WEBPACK_IMPORTED_MODULE_2__["default"].getAllPosts(id).then(function (res) {
-      setPosts(res.data[0]); // console.log(res.data[0]);
-    });
+    if (!profile) {
+      console.log("no given profile");
+      _api__WEBPACK_IMPORTED_MODULE_2__["default"].getAllPosts(id).then(function (res) {
+        setPosts(res.data['posts'][0]);
+      });
+    } else {
+      _api__WEBPACK_IMPORTED_MODULE_2__["default"].getProfilePosts(profile).then(function (res) {
+        console.log(res.data);
+        setPosts(res.data);
+      });
+    }
   }, []);
 
   var renderPosts = function renderPosts() {
@@ -2513,7 +2559,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Sidebar_ProfileSidebar__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Sidebar/ProfileSidebar */ "./resources/js/src/components/Sidebar/ProfileSidebar.js");
 /* harmony import */ var _Profile_ProfileBar__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Profile/ProfileBar */ "./resources/js/src/components/Profile/ProfileBar.js");
 /* harmony import */ var _Feed_Feed__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../Feed/Feed */ "./resources/js/src/components/Feed/Feed.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _api__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../api */ "./resources/js/src/api.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
 
 
 
@@ -2522,14 +2571,19 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var Profile = function Profile(_ref) {
-  var friendsList = _ref.friendsList;
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("main", {
+  var id = _ref.id,
+      friendsList = _ref.friendsList;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Profile_ProfileBar__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      id: id
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("main", {
       id: "home-body",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_Sidebar_ProfileSidebar__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Sidebar_ProfileSidebar__WEBPACK_IMPORTED_MODULE_1__["default"], {
         friendsList: friendsList
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_Feed_Feed__WEBPACK_IMPORTED_MODULE_3__["default"], {})]
-    })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Feed_Feed__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        profile: id
+      })]
+    })]
   });
 };
 
@@ -2550,17 +2604,45 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var _User1__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./User1 */ "./resources/js/src/components/Profile/User1.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _api__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../api */ "./resources/js/src/api.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
 
-var ProfileBar = function ProfileBar() {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+
+
+
+var ProfileBar = function ProfileBar(_ref) {
+  var id = _ref.id;
+
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null),
+      _useState2 = _slicedToArray(_useState, 2),
+      username = _useState2[0],
+      setUsername = _useState2[1];
+
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    _api__WEBPACK_IMPORTED_MODULE_2__["default"].getProfile(id).then(function (res) {
+      setUsername(res.data[0].username);
+    });
+  }, []);
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
     className: "profilebar",
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_User1__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_User1__WEBPACK_IMPORTED_MODULE_1__["default"], {
       profilePhoto: "https://i.kym-cdn.com/entries/icons/original/000/038/790/cover1.jpg",
-      username: "The Intruder"
+      username: username,
+      profilestatus: "I am living in your walls"
     })
   });
 };
@@ -2588,12 +2670,19 @@ __webpack_require__.r(__webpack_exports__);
 
 var User1 = function User1(_ref) {
   var profilePhoto = _ref.profilePhoto,
-      username = _ref.username;
+      username = _ref.username,
+      profilestatus = _ref.profilestatus;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
     className: "userCardBar",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
       src: profilePhoto
-    }), username]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+      className: "username",
+      children: username
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+      className: "profilestatus",
+      children: profilestatus
+    })]
   });
 };
 

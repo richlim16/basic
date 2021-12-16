@@ -18,7 +18,9 @@ export default {
     getAllFriends: (id) =>
         axios.get(`/api/friends/${id}`),
 
-    //get user data of the post
-    // getUser: (id) =>
-    //     axios.get(`/api/users/${id}`),
+    //getting profile
+    getProfile: (id) =>
+        axios.get(`/api/profile/${id}`),
+    getProfilePosts: (id) =>
+        axios.get(`api/profile/posts/${id}`),
 }
