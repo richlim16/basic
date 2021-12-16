@@ -10,9 +10,11 @@ const Feed = ({ id }) => {
         api.getAllPosts(id)
             .then(res => {
                 setPosts(res.data[0]);
-                console.log(res.data[0]);
+                // console.log(res.data[0]);
             })
     }, []);
+
+
 
 
     const renderPosts = () => {
@@ -33,6 +35,7 @@ const Feed = ({ id }) => {
             ))
         }
     }
+
 
     return (
         <div id="posts-container">

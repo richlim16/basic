@@ -2182,51 +2182,23 @@ var App = function App(props) {
       setFriends(res.data);
     });
   }, []);
-
-  var renderFriends = function renderFriends() {
-    if (!friends) {
-      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("tr", {
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("td", {
-          children: "loading friends list..."
-        })
-      });
-    } else if (friends.length === 0) {
-      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("tr", {
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("td", {
-          children: "No Friends... lmao"
-        })
-      });
-    } else {
-      return friends.map(function (friend) {
-        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("tr", {
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("td", {
-            children: ["id : ", friend.id]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("td", {
-            children: ["name : ", friend.username]
-          })]
-        });
-      });
-    }
-  };
-
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.BrowserRouter, {
     className: "App__container",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("h1", {
       children: ["testing user id: ", props.user_id]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("table", {
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("tbody", {
-        children: renderFriends()
-      })
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_components_NavBar__WEBPACK_IMPORTED_MODULE_5__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_8__.Routes, {
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_8__.Route, {
         exact: true,
         path: "/",
         element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_components_Pages_NewsFeed__WEBPACK_IMPORTED_MODULE_3__["default"], {
-          id: props.user_id
+          id: props.user_id,
+          friendsList: friends
         })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_8__.Route, {
         path: "/profile",
-        element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_components_Pages_Profile__WEBPACK_IMPORTED_MODULE_4__["default"], {})
+        element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_components_Pages_Profile__WEBPACK_IMPORTED_MODULE_4__["default"], {
+          friendsList: friends
+        })
       })]
     })]
   });
@@ -2277,7 +2249,10 @@ var BASE_API_URL = 'localhost:8000/api';
   //friends requests
   getAllFriends: function getAllFriends(id) {
     return axios.get("/api/friends/".concat(id));
-  }
+  } //get user data of the post
+  // getUser: (id) =>
+  //     axios.get(`/api/users/${id}`),
+
 });
 
 /***/ }),
@@ -2326,8 +2301,7 @@ var Feed = function Feed(_ref) {
 
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     _api__WEBPACK_IMPORTED_MODULE_2__["default"].getAllPosts(id).then(function (res) {
-      setPosts(res.data[0]);
-      console.log(res.data[0]);
+      setPosts(res.data[0]); // console.log(res.data[0]);
     });
   }, []);
 
@@ -2387,7 +2361,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _api__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../api */ "./resources/js/src/api.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
 
 
 
@@ -2397,25 +2373,42 @@ var Post = function Post(_ref) {
       userIMG = _ref.userIMG,
       caption = _ref.caption,
       image = _ref.image,
-      dateCreated = _ref.dateCreated;
+      dateCreated = _ref.dateCreated,
+      friendsList = _ref.friendsList;
   var hasImage = image;
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+
+  function getUserByID(array, ID) {
+    return array.find(function (element) {
+      return element.id === ID;
+    });
+  }
+
+  function getUsername() {
+    if (friendsList) {
+      var user = getUserByID(friendsList, userID);
+      return user.username;
+    }
+  }
+
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
     className: "postCard",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("h5", {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("h5", {
       className: "card-header",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
         src: userIMG
-      }), userID, " posted ", dateCreated]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("span", {
+        children: [getUsername(), " posted ", dateCreated]
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
       className: "card-body",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
         children: caption
-      }), hasImage ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
+      }), hasImage ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
           src: image
         })
       }) : null]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
       className: "card-footer",
       children: "Place your comment here!"
     })]
@@ -2489,10 +2482,13 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var NewsFeed = function NewsFeed(_ref) {
-  var id = _ref.id;
+  var id = _ref.id,
+      friendsList = _ref.friendsList;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("main", {
     id: "home-body",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_Sidebar_NewsFeedSidebar__WEBPACK_IMPORTED_MODULE_1__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_Feed_Feed__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_Sidebar_NewsFeedSidebar__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      friendsList: friendsList
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_Feed_Feed__WEBPACK_IMPORTED_MODULE_2__["default"], {
       id: id
     })]
   });
@@ -2525,11 +2521,14 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var Profile = function Profile() {
+var Profile = function Profile(_ref) {
+  var friendsList = _ref.friendsList;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("main", {
       id: "home-body",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_Sidebar_ProfileSidebar__WEBPACK_IMPORTED_MODULE_1__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_Feed_Feed__WEBPACK_IMPORTED_MODULE_3__["default"], {})]
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_Sidebar_ProfileSidebar__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        friendsList: friendsList
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_Feed_Feed__WEBPACK_IMPORTED_MODULE_3__["default"], {})]
     })
   });
 };
@@ -2621,7 +2620,27 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var NewsFeedSidebar = function NewsFeedSidebar() {
+var NewsFeedSidebar = function NewsFeedSidebar(_ref) {
+  var friendsList = _ref.friendsList;
+
+  var renderFriends = function renderFriends(friendsList) {
+    if (!friendsList) {
+      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+        children: "loading friends list..."
+      });
+    } else if (friendsList.length === 0) {
+      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h3", {
+        children: "lmao you have no friends"
+      });
+    } else {
+      return friendsList.map(function (friend) {
+        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_User__WEBPACK_IMPORTED_MODULE_1__["default"], {
+          username: friend.username
+        });
+      });
+    }
+  };
+
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
     className: "sidebar",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
@@ -2629,13 +2648,7 @@ var NewsFeedSidebar = function NewsFeedSidebar() {
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h2", {
         className: "label",
         children: "Friends"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_User__WEBPACK_IMPORTED_MODULE_1__["default"], {
-        profilePhoto: "https://scontent.fceb4-1.fna.fbcdn.net/v/t1.6435-9/179922935_3812072485581640_6416529595137471531_n.jpg?_nc_cat=104&ccb=1-5&_nc_sid=09cbfe&_nc_eui2=AeHVe1bHDEzB7z4FS-IQ_SclFP7Z3sOkBrQU_tnew6QGtDdlV549gJT5yO-gJy3O0Zq80qJumGb5My3uRrGfZbpO&_nc_ohc=80A-IWYIWfEAX-ykyOU&_nc_ht=scontent.fceb4-1.fna&oh=213d170f622486e0c305cfbc83d0df6d&oe=61D4B6B7",
-        username: "Richlim16"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_User__WEBPACK_IMPORTED_MODULE_1__["default"], {
-        profilePhoto: "https://avatars.githubusercontent.com/u/54580181?v=4",
-        username: "R-ayaay"
-      })]
+      }), renderFriends(friendsList)]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
       className: "list",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h2", {
@@ -2675,7 +2688,27 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var ProfileSidebar = function ProfileSidebar() {
+var ProfileSidebar = function ProfileSidebar(_ref) {
+  var friendsList = _ref.friendsList;
+
+  var renderFriends = function renderFriends(friendsList) {
+    if (!friendsList) {
+      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+        children: "loading friends list..."
+      });
+    } else if (friendsList.length === 0) {
+      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h3", {
+        children: "lmao you have no friends"
+      });
+    } else {
+      return friendsList.map(function (friend) {
+        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_User__WEBPACK_IMPORTED_MODULE_1__["default"], {
+          username: friend.username
+        });
+      });
+    }
+  };
+
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
     className: "sidebar",
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
@@ -2683,13 +2716,7 @@ var ProfileSidebar = function ProfileSidebar() {
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h2", {
         className: "label",
         children: "Friends"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_User__WEBPACK_IMPORTED_MODULE_1__["default"], {
-        profilePhoto: "https://scontent.fceb4-1.fna.fbcdn.net/v/t1.6435-9/179922935_3812072485581640_6416529595137471531_n.jpg?_nc_cat=104&ccb=1-5&_nc_sid=09cbfe&_nc_eui2=AeHVe1bHDEzB7z4FS-IQ_SclFP7Z3sOkBrQU_tnew6QGtDdlV549gJT5yO-gJy3O0Zq80qJumGb5My3uRrGfZbpO&_nc_ohc=80A-IWYIWfEAX-ykyOU&_nc_ht=scontent.fceb4-1.fna&oh=213d170f622486e0c305cfbc83d0df6d&oe=61D4B6B7",
-        username: "Richlim16"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_User__WEBPACK_IMPORTED_MODULE_1__["default"], {
-        profilePhoto: "https://avatars.githubusercontent.com/u/54580181?v=4",
-        username: "R-ayaay"
-      })]
+      }), renderFriends(friendsList)]
     })
   });
 };

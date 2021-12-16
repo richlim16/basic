@@ -3,12 +3,12 @@ import { Link } from 'react-router-dom';
 import NewsFeedSidebar from '../Sidebar/NewsFeedSidebar';
 import Feed from '../Feed/Feed';
 
-const NewsFeed = ({id}) => {
+const NewsFeed = ({ id, friendsList }) => {
 
     return (
         <main id="home-body">
-            <NewsFeedSidebar/>
-            <Feed id={id}/>
+            <NewsFeedSidebar friendsList={friendsList} />
+            <Feed id={id} />
         </main>
     );
 };
